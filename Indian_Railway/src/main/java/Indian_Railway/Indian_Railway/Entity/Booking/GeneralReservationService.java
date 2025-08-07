@@ -1,15 +1,12 @@
 package Indian_Railway.Indian_Railway.Entity.Booking;
 
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import Indian_Railway.Indian_Railway.Entity.TrainDetails;
 
-public class GeneralReservation implements Booking{
-
-
+public class GeneralReservationService implements Booking{
 
 
     @Override
-    public void book() {
+    public void book(TrainDetails trainDetails,String coach, Integer noOfTickets, Integer amount, String bookingType, String date, String fromstation, String destination) {
 
     }
 }

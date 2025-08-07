@@ -7,16 +7,17 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Calendar;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class TatkalBooking implements Booking {
+public class Tatkal {
+    private static final LocalTime tatkal_opens_at_for_nonsleepers = LocalTime.of(10, 00, 00);
+    private static final LocalTime tatkal_opens_at_for_sleepers = LocalTime.of(11, 00, 00);
     @Id
-    @SequenceGenerator(name = "tatkalseq",sequenceName = "seqtatkal", allocationSize = 1,initialValue = 100)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "tatkalseq")
+    @SequenceGenerator(name = "tatkalseq", sequenceName = "seqtatkal", allocationSize = 1, initialValue = 100)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tatkalseq")
     private Integer id;
     private String coach;
     private String passenger_name;
@@ -28,12 +29,4 @@ public class TatkalBooking implements Booking {
     private Integer amount;
 
 
-    private static final LocalTime tatkal_opens_at_for_nonsleepers = LocalTime.of(10,00,00);
-    private static final LocalTime tatkal_opens_at_for_sleepers = LocalTime.of(11,00,00);
-
-
-    @Override
-    public void book() {
-
-    }
 }

@@ -80,7 +80,8 @@ public class RailwayController {
     @PostMapping("/book")
     public void bookTicket(@RequestParam Integer trainNumber, @RequestParam String coach,
                            @RequestParam Integer noOfTickets, @RequestParam Integer amount,
-                           @RequestParam String bookingType, @RequestParam String date){
-       serviceClass.bookTicket(trainNumber,coach,noOfTickets,amount,bookingType,date);
+                           @RequestParam String bookingType, @RequestParam String date,
+                           @RequestParam String fromstation, @RequestParam String destination){
+       serviceClass.bookTicket(trainNumber,coach,noOfTickets,amount,bookingType,date,fromstation,destination);
     }
 }

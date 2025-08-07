@@ -1,4 +1,4 @@
-package Indian_Railway.Indian_Railway.Entity;
+package Indian_Railway.Indian_Railway.Entity.Booking;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

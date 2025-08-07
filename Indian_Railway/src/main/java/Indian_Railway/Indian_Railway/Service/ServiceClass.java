@@ -1,12 +1,7 @@
 package Indian_Railway.Indian_Railway.Service;
 
-import Indian_Railway.Indian_Railway.Entity.Booking.Booking;
-import Indian_Railway.Indian_Railway.Entity.Booking.GeneralReservation;
-import Indian_Railway.Indian_Railway.Entity.Booking.TatkalBooking;
-import Indian_Railway.Indian_Railway.Entity.Ticket;
-import Indian_Railway.Indian_Railway.Entity.TrainCoaches;
-import Indian_Railway.Indian_Railway.Entity.TrainDetails;
-import Indian_Railway.Indian_Railway.Entity.TrainRunningDays;
+import Indian_Railway.Indian_Railway.Entity.*;
+import Indian_Railway.Indian_Railway.Entity.Booking.*;
 import Indian_Railway.Indian_Railway.Repository.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,12 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class ServiceClass {
@@ -36,6 +26,15 @@ public class ServiceClass {
     private TrainCoachesRepo trainCoachesRepo;
 
     private TrainReservationSystemRepo trainReservationSystemRepo;
+
+    @Autowired
+    private ValidTicket validTicket;
+
+    @Autowired
+    private CheckTrainRunningDays checkTrainRunningDay;
+
+    @Autowired
+    private CheckTrainStationFromToDestination checkTrainStationFromToDestination;
 
     @Autowired
     public ServiceClass(TrainDetailsRepo trainDetailsRepo, StationDetailsRepo stationDetailsRepo, TrainStoppingStationRepo trainStoppingStationRepo, TrainCoachesRepo trainCoachesRepo, TrainReservationSystemRepo trainReservationSystemRepo) {
@@ -94,8 +93,16 @@ public class ServiceClass {
     }
 
     public void bookTicket(Integer trainNumber, String coach, Integer noOfTickets, Integer amount,
-                           String bookingType, String date) {
+                           String bookingType, String date,String fromstation,String destination) {
         TrainDetails trainDetails = trainDetailsRepo.findByTrain_Number(trainNumber);
+        if(trainDetails != null){
+            logger.info("trainDetails:");
+        }else {
+            System.out.println("Throw Exception");
+        }
+        ListIterator<TrainStoppingStation> list1 = trainDetails.getTrainStoppingStations().listIterator();
+        boolean check = checkTrainStationFromToDestination.checkTainFromToDestination
+                (list1,fromstation,destination);
         ListIterator<TrainCoaches> listIterator = trainDetails.getTrainCoachesList().listIterator();
         Ticket ticket = null;
         TrainCoaches trainCoaches = null;
@@ -105,64 +112,26 @@ public class ServiceClass {
             logger.info("First If {}", Coaches);
             if (Coaches.equalsIgnoreCase(coach)) {
                 ticket = trainCoaches.getTicket();
-                logger.info("Second IF {}", Coaches);
+                logger.info("{}", Coaches);
                 break;
             }
         }
+        Integer availabletickets = ticket.getAvailable_Tickets();
+        boolean checkavailabletickets = validTicket.checkTicketAvailability(noOfTickets,availabletickets);
+        if (check && checkavailabletickets){
+            Booking booking = bookingTypeCheck(bookingType);
+            booking.book(trainDetails,coach,noOfTickets,amount,bookingType,date,fromstation,destination);
+        }
 
-        List<TrainRunningDays> train_running_days = trainDetails.getTrainRunningDays().stream().toList();
-        if(checkTrainRunningDay(date,train_running_days)){
-            logger.info("Train TrainRunningDays is Valid");
-        }
-        Booking booking = bookingTypeCheck(bookingType);
-        if (booking != null){
-
-        }else {
-            logger.info("Throw Exception!");
-        }
-        if(noOfTickets <= ticket.getAvailable_Tickets()){
-            logger.info("{} Tickets are Available",noOfTickets);
-            booking.book();
-        }else{
-            logger.info("{} Tickets are Not Available",noOfTickets);
-        }
         System.out.println(trainCoaches.getCoach_name());
     }
 
-    private boolean checkTrainRunningDay(String date, List<TrainRunningDays> train_running_days) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        logger.info("Date formatter:");
-        LocalDate localDate = LocalDate.parse(date,formatter);
-        logger.info("{} Date",localDate);
-        DayOfWeek day = localDate.getDayOfWeek();
-        logger.info("{} Day",day);
-        
-        if (train_running_days.contains(day)){
-            logger.info("train_running_days.contains(day) -> {} ",true);
-            return true;
-        }
-        logger.info("Checking with Stream");
-        ListIterator<TrainRunningDays> listIterator= train_running_days.listIterator();
-        boolean check = train_running_days.stream().anyMatch(train -> train.name().equalsIgnoreCase(day.name()));
-        logger.info("Stream Result {}",check);
-        while(listIterator.hasNext()){
-            TrainRunningDays trainRunningDays = listIterator.next();
-            String name = trainRunningDays.name();
-            logger.info("trainRunningDays.name() -> {}",name);
-            if (name.equalsIgnoreCase(day.name())){
-                logger.info("Day {} Match Found {}",day,name);
-                return true;
-            }
-        }
-        logger.info("Day {} Match Not Found",day);
-        return false;
-    }
 
     private Booking bookingTypeCheck(String bookingType) {
         if (bookingType.equalsIgnoreCase("tatkal")){
-            return new TatkalBooking();
+            return new TatkalService();
         } else if (bookingType.equalsIgnoreCase("GR")) {
-            return new GeneralReservation();
+            return new GeneralReservationService();
         }
         return null;
     }
