@@ -46,3 +46,8 @@
 2025-08-07T11:03:33.914+05:30  INFO 1524 --- [indian-railway] [http-nio-8081-exec-1] I.Indian_Railway.Service.ServiceClass    : Day MONDAY Match Found Monday
 2025-08-07T11:03:33.914+05:30  INFO 1524 --- [indian-railway] [http-nio-8081-exec-1] I.Indian_Railway.Service.ServiceClass    : Train TrainRunningDays is Valid
 2025-08-07T11:03:33.914+05:30  INFO 1524 --- [indian-railway] [http-nio-8081-exec-1] I.Indian_Railway.Service.ServiceClass    : 1 Tickets are Available
+2025-08-07T11:14:21.368+05:30  INFO 1524 --- [indian-railway] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-07T11:14:21.378+05:30  INFO 1524 --- [indian-railway] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-07T11:14:21.387+05:30  INFO 1524 --- [indian-railway] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-07T11:14:21.407+05:30  INFO 1524 --- [indian-railway] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-07T11:14:21.491+05:30  INFO 1524 --- [indian-railway] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
