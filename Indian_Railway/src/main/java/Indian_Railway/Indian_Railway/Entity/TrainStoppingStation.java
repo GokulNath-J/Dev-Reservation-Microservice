@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -20,6 +21,7 @@ public class TrainStoppingStation {
     @SequenceGenerator(name = "Seqstoppingstation",sequenceName = "seqtrainstoppingstation",allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "Seqstoppingstation")
     private Integer id;
+    private Integer train_number;
     private String station_name;
     private Integer platform_no;
     private LocalDateTime departure_date_time;
@@ -28,6 +30,10 @@ public class TrainStoppingStation {
 //    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "StationDetailsID")
 //    private StationDetails stationDetails;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "station_name",referencedColumnName = "station_name")
+    private List<TicketsPerStation> ticketsPerStations;
 }
 
 

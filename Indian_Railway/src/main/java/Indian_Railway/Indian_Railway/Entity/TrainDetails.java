@@ -49,4 +49,6 @@ public class TrainDetails {
     @CollectionTable(name = "train_running_days",joinColumns = @JoinColumn(name = "train_number",
             referencedColumnName = "train_number"))
     private Set<TrainRunningDays> trainRunningDays;
+
+
 }

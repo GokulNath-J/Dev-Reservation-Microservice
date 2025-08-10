@@ -77,11 +77,11 @@ public class RailwayController {
 //        return serviceClass.check_train_from_startingpoint(startingpoint);
 //   }
 
-    @PostMapping("/book")
-    public void bookTicket(@RequestParam Integer trainNumber, @RequestParam String coach,
-                           @RequestParam Integer noOfTickets, @RequestParam Integer amount,
-                           @RequestParam String bookingType, @RequestParam String date,
-                           @RequestParam String fromstation, @RequestParam String destination){
-       serviceClass.bookTicket(trainNumber,coach,noOfTickets,amount,bookingType,date,fromstation,destination);
-    }
+//    @PostMapping("/book")
+//    public void bookTicket(@RequestParam Integer trainNumber, @RequestParam String coach,
+//                           @RequestParam Integer noOfTickets, @RequestParam Integer amount,
+//                           @RequestParam String bookingType, @RequestParam String date,
+//                           @RequestParam String fromstation, @RequestParam String destination){
+//       serviceClass.bookTicket(trainNumber,coach,noOfTickets,amount,bookingType,date,fromstation,destination);
+//    }
 }
