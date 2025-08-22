@@ -1,0 +1,48 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: shutdown, beans
+  endpoint:
+    shutdown:
+      enabled: 'true'
+spring:
+#  kafka:
+#    producer:
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#    consumer:
+#      properties:
+#        spring:
+#          json:
+#            use:
+#              type:
+#                headers: 'false'
+#            value:
+#              default:
+#                type: com.example.Booking.Service.DTO.TrainDTOWrapper
+#            trusted:
+#              packages: '*'
+#      auto-offset-reset: latest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  application:
+    name: Booking-Service
+  datasource:
+    password: Gokul@03
+    username: root
+    url: jdbc:mysql://localhost:3306/devreservation?createDatabaseIfNotExists=true
+  jpa:
+    hibernate:
+      ddl-auto: update
+logging:
+  file:
+    name: Booking-Service.logs
+  level:
+    root: info
+server:
+  port: '8082'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

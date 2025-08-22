@@ -1,0 +1,68 @@
+2025-08-22T11:26:17.311+05:30  INFO 1628 --- [Train-Service] [main] c.e.T.TrainServiceApplication            : Starting TrainServiceApplication using Java 24.0.2 with PID 1628 (E:\Java\Java Programs\Project Development\Dev-Reservation-Microservice\Train-Service\target\classes started by Gokul Nath in E:\Java\Java Programs\Project Development\Dev-Reservation-Microservice)
+2025-08-22T11:26:17.325+05:30  INFO 1628 --- [Train-Service] [main] c.e.T.TrainServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-08-22T11:26:17.504+05:30  INFO 1628 --- [Train-Service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8000
+2025-08-22T11:26:17.512+05:30  INFO 1628 --- [Train-Service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=Train-Service, profiles=[default], label=null, version=null, state=null
+2025-08-22T11:26:21.785+05:30  INFO 1628 --- [Train-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-22T11:26:22.144+05:30  INFO 1628 --- [Train-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 328 ms. Found 5 JPA repository interfaces.
+2025-08-22T11:26:22.815+05:30  INFO 1628 --- [Train-Service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=32482c69-2c2e-3db8-9dcd-e4c712ca7a0a
+2025-08-22T11:26:24.068+05:30  INFO 1628 --- [Train-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-22T11:26:24.103+05:30  INFO 1628 --- [Train-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-22T11:26:24.104+05:30  INFO 1628 --- [Train-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-22T11:26:24.233+05:30  INFO 1628 --- [Train-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-22T11:26:24.234+05:30  INFO 1628 --- [Train-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6716 ms
+2025-08-22T11:26:25.670+05:30  INFO 1628 --- [Train-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-22T11:26:26.311+05:30  INFO 1628 --- [Train-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-22T11:26:26.559+05:30  INFO 1628 --- [Train-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-22T11:26:27.866+05:30  INFO 1628 --- [Train-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-22T11:26:28.122+05:30  INFO 1628 --- [Train-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-22T11:26:29.849+05:30  INFO 1628 --- [Train-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10d97b64
+2025-08-22T11:26:29.853+05:30  INFO 1628 --- [Train-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-22T11:26:30.402+05:30  INFO 1628 --- [Train-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.35
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-22T11:26:33.650+05:30  INFO 1628 --- [Train-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-22T11:26:34.115+05:30  INFO 1628 --- [Train-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-22T11:26:35.430+05:30  INFO 1628 --- [Train-Service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-22T11:26:36.769+05:30  WARN 1628 --- [Train-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-22T11:26:38.138+05:30  INFO 1628 --- [Train-Service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-08-22T11:26:38.244+05:30  WARN 1628 --- [Train-Service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-08-22T11:26:38.272+05:30  INFO 1628 --- [Train-Service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2025-08-22T11:26:38.577+05:30  INFO 1628 --- [Train-Service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-08-22T11:26:38.646+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-08-22T11:26:38.653+05:30  INFO 1628 --- [Train-Service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-08-22T11:26:38.675+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-08-22T11:26:38.676+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-08-22T11:26:38.676+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-08-22T11:26:38.677+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-08-22T11:26:38.677+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-08-22T11:26:38.677+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-08-22T11:26:38.678+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-08-22T11:26:39.369+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-08-22T11:26:39.373+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-08-22T11:26:39.378+05:30  INFO 1628 --- [Train-Service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-08-22T11:26:39.383+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1755842199383 with initial instances count: 1
+2025-08-22T11:26:39.393+05:30  INFO 1628 --- [Train-Service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application TRAIN-SERVICE with eureka with status UP
+2025-08-22T11:26:39.395+05:30  INFO 1628 --- [Train-Service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1755842199395, current=UP, previous=STARTING]
+2025-08-22T11:26:39.399+05:30  INFO 1628 --- [Train-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TRAIN-SERVICE/DESKTOP-CSPI8JK.mshome.net:Train-Service:8081: registering service...
+2025-08-22T11:26:39.602+05:30  INFO 1628 --- [Train-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TRAIN-SERVICE/DESKTOP-CSPI8JK.mshome.net:Train-Service:8081 - registration status: 204
+2025-08-22T11:26:39.608+05:30  INFO 1628 --- [Train-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-22T11:26:39.613+05:30  INFO 1628 --- [Train-Service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2025-08-22T11:26:39.707+05:30  INFO 1628 --- [Train-Service] [main] c.e.T.TrainServiceApplication            : Started TrainServiceApplication in 24.941 seconds (process running for 28.78)
+2025-08-22T11:29:40.490+05:30  INFO 1628 --- [Train-Service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application TRAIN-SERVICE with eureka with status DOWN
+2025-08-22T11:29:40.492+05:30  INFO 1628 --- [Train-Service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1755842380492, current=DOWN, previous=UP]
+2025-08-22T11:29:40.494+05:30  INFO 1628 --- [Train-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TRAIN-SERVICE/DESKTOP-CSPI8JK.mshome.net:Train-Service:8081: registering service...
+2025-08-22T11:29:40.516+05:30  INFO 1628 --- [Train-Service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-22T11:29:40.517+05:30  INFO 1628 --- [Train-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TRAIN-SERVICE/DESKTOP-CSPI8JK.mshome.net:Train-Service:8081 - registration status: 204
+2025-08-22T11:29:40.530+05:30  INFO 1628 --- [Train-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-22T11:29:40.551+05:30  INFO 1628 --- [Train-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-22T11:29:40.591+05:30  INFO 1628 --- [Train-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-22T11:29:40.673+05:30  INFO 1628 --- [Train-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-22T11:29:40.676+05:30  INFO 1628 --- [Train-Service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-08-22T11:29:43.680+05:30  INFO 1628 --- [Train-Service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-08-22T11:29:43.713+05:30  INFO 1628 --- [Train-Service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_TRAIN-SERVICE/DESKTOP-CSPI8JK.mshome.net:Train-Service:8081 - deregister  status: 200
+2025-08-22T11:29:43.715+05:30  INFO 1628 --- [Train-Service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

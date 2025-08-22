@@ -1,0 +1,35 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: shutdown,beans,env
+  endpoint:
+    shutdown:
+      enabled: 'true'
+spring:
+#  kafka:
+#    producer:
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#    consumer:
+#      group-id: TrainDTO-Group-1
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  application:
+    name: Train-Service
+  datasource:
+    password: Gokul@03
+    username: root
+    url: jdbc:mysql://localhost:3306/devreservation?createDatabaseIfNotExist=true
+  jpa:
+    hibernate:
+      ddl-auto: update
+logging:
+  file:
+    name: Train-Service.log
+server:
+  port: '8081'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

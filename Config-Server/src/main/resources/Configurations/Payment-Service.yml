@@ -1,0 +1,27 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: shutdown,beans,env
+  endpoint:
+    shutdown:
+      enabled: 'true'
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/devreservation?createDatabaseIfNotExist=true
+    password: Gokul@03
+  application:
+    name: Payment-Service
+  jpa:
+    hibernate:
+      ddl-auto: update
+logging:
+  file:
+    name: Payment-Service.log
+server:
+  port: '8085'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

@@ -1,0 +1,69 @@
+2025-08-22T11:27:43.462+05:30  INFO 8696 --- [Booking-Service] [main] c.e.B.Service.BookingServiceApplication  : Starting BookingServiceApplication using Java 24.0.2 with PID 8696 (E:\Java\Java Programs\Project Development\Dev-Reservation-Microservice\Booking-Service\target\classes started by Gokul Nath in E:\Java\Java Programs\Project Development\Dev-Reservation-Microservice)
+2025-08-22T11:27:43.478+05:30  INFO 8696 --- [Booking-Service] [main] c.e.B.Service.BookingServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-08-22T11:27:43.591+05:30  INFO 8696 --- [Booking-Service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8000
+2025-08-22T11:27:43.592+05:30  INFO 8696 --- [Booking-Service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=Booking-Service, profiles=[default], label=null, version=null, state=null
+2025-08-22T11:27:46.580+05:30  INFO 8696 --- [Booking-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-22T11:27:46.892+05:30  INFO 8696 --- [Booking-Service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 287 ms. Found 4 JPA repository interfaces.
+2025-08-22T11:27:47.397+05:30  INFO 8696 --- [Booking-Service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a3c71e2d-93e3-3102-b7e1-f1f66725f2b7
+2025-08-22T11:27:48.438+05:30  INFO 8696 --- [Booking-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-08-22T11:27:48.477+05:30  INFO 8696 --- [Booking-Service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-22T11:27:48.478+05:30  INFO 8696 --- [Booking-Service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-22T11:27:48.683+05:30  INFO 8696 --- [Booking-Service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-22T11:27:48.691+05:30  INFO 8696 --- [Booking-Service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5092 ms
+2025-08-22T11:27:49.542+05:30  INFO 8696 --- [Booking-Service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-22T11:27:49.660+05:30  INFO 8696 --- [Booking-Service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-22T11:27:49.731+05:30  INFO 8696 --- [Booking-Service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-22T11:27:50.419+05:30  INFO 8696 --- [Booking-Service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-22T11:27:50.486+05:30  INFO 8696 --- [Booking-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-22T11:27:51.341+05:30  INFO 8696 --- [Booking-Service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@32121140
+2025-08-22T11:27:51.345+05:30  INFO 8696 --- [Booking-Service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-22T11:27:51.614+05:30  INFO 8696 --- [Booking-Service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.35
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-22T11:27:53.822+05:30  INFO 8696 --- [Booking-Service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-22T11:27:53.956+05:30  INFO 8696 --- [Booking-Service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-22T11:27:54.960+05:30  WARN 8696 --- [Booking-Service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-22T11:27:55.085+05:30  INFO 8696 --- [Booking-Service] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'Train-Service' URL not provided. Will try picking an instance via load-balancing.
+2025-08-22T11:27:55.259+05:30  INFO 8696 --- [Booking-Service] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'Payment-Service' URL not provided. Will try picking an instance via load-balancing.
+2025-08-22T11:27:56.478+05:30  INFO 8696 --- [Booking-Service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-08-22T11:27:56.555+05:30  WARN 8696 --- [Booking-Service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-08-22T11:27:56.803+05:30  INFO 8696 --- [Booking-Service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2025-08-22T11:27:56.978+05:30  INFO 8696 --- [Booking-Service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-08-22T11:27:57.066+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-08-22T11:27:57.076+05:30  INFO 8696 --- [Booking-Service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-08-22T11:27:57.097+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-08-22T11:27:57.098+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-08-22T11:27:57.099+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-08-22T11:27:57.099+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-08-22T11:27:57.099+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-08-22T11:27:57.100+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-08-22T11:27:57.100+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-08-22T11:27:57.840+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-08-22T11:27:57.844+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-08-22T11:27:57.847+05:30  INFO 8696 --- [Booking-Service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-08-22T11:27:57.850+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1755842277850 with initial instances count: 3
+2025-08-22T11:27:57.857+05:30  INFO 8696 --- [Booking-Service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BOOKING-SERVICE with eureka with status UP
+2025-08-22T11:27:57.859+05:30  INFO 8696 --- [Booking-Service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1755842277859, current=UP, previous=STARTING]
+2025-08-22T11:27:57.862+05:30  INFO 8696 --- [Booking-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKING-SERVICE/DESKTOP-CSPI8JK.mshome.net:Booking-Service:8082: registering service...
+2025-08-22T11:27:57.919+05:30  INFO 8696 --- [Booking-Service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-08-22T11:27:57.921+05:30  INFO 8696 --- [Booking-Service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2025-08-22T11:27:58.003+05:30  INFO 8696 --- [Booking-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKING-SERVICE/DESKTOP-CSPI8JK.mshome.net:Booking-Service:8082 - registration status: 204
+2025-08-22T11:27:58.016+05:30  INFO 8696 --- [Booking-Service] [main] c.e.B.Service.BookingServiceApplication  : Started BookingServiceApplication in 17.341 seconds (process running for 19.158)
+2025-08-22T11:29:42.640+05:30  INFO 8696 --- [Booking-Service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BOOKING-SERVICE with eureka with status DOWN
+2025-08-22T11:29:42.640+05:30  INFO 8696 --- [Booking-Service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1755842382640, current=DOWN, previous=UP]
+2025-08-22T11:29:42.642+05:30  INFO 8696 --- [Booking-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKING-SERVICE/DESKTOP-CSPI8JK.mshome.net:Booking-Service:8082: registering service...
+2025-08-22T11:29:42.650+05:30  INFO 8696 --- [Booking-Service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-22T11:29:42.660+05:30  INFO 8696 --- [Booking-Service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKING-SERVICE/DESKTOP-CSPI8JK.mshome.net:Booking-Service:8082 - registration status: 204
+2025-08-22T11:29:42.670+05:30  INFO 8696 --- [Booking-Service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-22T11:29:42.691+05:30  INFO 8696 --- [Booking-Service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-22T11:29:42.698+05:30  INFO 8696 --- [Booking-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-22T11:29:42.726+05:30  INFO 8696 --- [Booking-Service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-22T11:29:42.728+05:30  INFO 8696 --- [Booking-Service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-08-22T11:29:45.840+05:30  INFO 8696 --- [Booking-Service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-08-22T11:29:45.874+05:30  INFO 8696 --- [Booking-Service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKING-SERVICE/DESKTOP-CSPI8JK.mshome.net:Booking-Service:8082 - deregister  status: 200
+2025-08-22T11:29:45.875+05:30  INFO 8696 --- [Booking-Service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

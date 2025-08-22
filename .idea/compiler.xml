@@ -7,23 +7,35 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Config-Server" />
+        <module name="Eureka-Server" />
+        <module name="API-GateWay" />
       </profile>
-      <profile name="Annotation profile for Passenger-Reservation" enabled="true">
+      <profile name="Annotation profile for Booking-Service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
+        <module name="Booking-Service" />
+        <module name="Train-Service" />
         <module name="Passenger-Reservation" />
-        <module name="Indian_Railway" />
+        <module name="Payment-Service" />
+        <module name="User-Service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Indian_Railway" options="-parameters" />
+      <module name="API-GateWay" options="-parameters" />
+      <module name="Booking-Service" options="-parameters" />
+      <module name="Config-Server" options="-parameters" />
+      <module name="Eureka-Server" options="-parameters" />
       <module name="Passenger-Reservation" options="-parameters" />
+      <module name="Payment-Service" options="-parameters" />
+      <module name="Train-Service" options="-parameters" />
+      <module name="User-Service" options="-parameters" />
     </option>
   </component>
 </project>
